@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.Views.Categorias.CategoriaAdicionarPage">
+
+    <StackLayout Margin="10,100,10,10">
+        <Entry Text="{Binding Categoria.Descricao}"/>
+
+        <Button Text="Salva" Command="{Binding SaveCommand}"/>
+    </StackLayout>
+
+</ContentPage>

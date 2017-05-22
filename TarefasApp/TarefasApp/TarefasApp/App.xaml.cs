@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using TarefasApp.Views.Categorias;
 using Xamarin.Forms;
 
 namespace TarefasApp
@@ -13,7 +13,7 @@ namespace TarefasApp
         {
             InitializeComponent();
 
-            MainPage = new TarefasApp.MainPage();
+            MainPage = new CategoriaListarPage();
         }
 
         protected override void OnStart()

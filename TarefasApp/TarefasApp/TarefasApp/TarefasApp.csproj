@@ -38,13 +38,20 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Models\Tarefa.cs" />
+    <Compile Include="ViewModels\Bases\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Categorias\CategoriaViewModel.cs" />
+    <Compile Include="Views\Categorias\CategoriaAdicionarPage.xaml.cs">
+      <DependentUpon>CategoriaAdicionarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Categorias\CategoriaListarPage.xaml.cs">
+      <DependentUpon>CategoriaListarPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPage.xaml">
+    <EmbeddedResource Include="Views\Categorias\CategoriaListarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -66,6 +73,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Views\Tarefas\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Categorias\CategoriaAdicionarPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.224\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
