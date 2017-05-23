@@ -2,6 +2,7 @@
 using TarefasApp.Models;
 using TarefasApp.ViewModels.Bases;
 using Xamarin.Forms;
+using System;
 
 namespace TarefasApp.ViewModels.Categorias
 {
@@ -23,17 +24,18 @@ namespace TarefasApp.ViewModels.Categorias
         public CategoriaViewModel()
         {
             _categoria = new Categoria{ Descricao = "Teste1"};
-            SaveCommand = new Command(ExecuteSaveCommandAsync, CanExecute);
+            //SaveCommand = new Command(ExecuteSaveCommandAsync, CanExecute);
         }
 
-        private async void ExecuteSaveCommandAsync()
-        {
-            await Task.Delay(1000);
-        }
+        //private void ExecuteSaveCommandAsync()
+        //{
+        //    _categoria = Categoria;
+        //    CanExecute();
+        //}
 
-        private bool CanExecute()
-        {
-            return true;
-        }
+        //private bool CanExecute()
+        //{
+        //    return true;
+        //}
     }
 }

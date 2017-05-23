@@ -13,7 +13,7 @@ namespace TarefasApp
         {
             InitializeComponent();
 
-            MainPage = new CategoriaListarPage();
+            MainPage = new NavigationPage(new CategoriaListarPage());
         }
 
         protected override void OnStart()
