@@ -1,12 +1,10 @@
-﻿using System.Threading.Tasks;
-using TarefasApp.Models;
+﻿using TarefasApp.Models;
 using TarefasApp.ViewModels.Bases;
 using Xamarin.Forms;
-using System;
 
 namespace TarefasApp.ViewModels.Categorias
 {
-    public class CategoriaViewModel : BaseViewModel
+    public class CategoriaListarViewModel : BaseViewModel
     {
         private Categoria _categoria;
 
@@ -21,7 +19,7 @@ namespace TarefasApp.ViewModels.Categorias
 
         public Command SaveCommand { get; }
 
-        public CategoriaViewModel()
+        public CategoriaListarViewModel()
         {
             _categoria = new Categoria{ Descricao = "Teste1"};
             //SaveCommand = new Command(ExecuteSaveCommandAsync, CanExecute);

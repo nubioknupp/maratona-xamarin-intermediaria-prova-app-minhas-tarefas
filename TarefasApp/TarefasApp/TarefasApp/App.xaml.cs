@@ -13,7 +13,10 @@ namespace TarefasApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new CategoriaListarPage());
+            MainPage = new NavigationPage(new CategoriaListarPage())
+            {
+                BarBackgroundColor = Color.Orange
+            };
         }
 
         protected override void OnStart()

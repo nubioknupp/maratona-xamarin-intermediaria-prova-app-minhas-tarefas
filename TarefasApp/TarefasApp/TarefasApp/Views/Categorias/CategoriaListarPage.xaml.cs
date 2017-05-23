@@ -1,5 +1,4 @@
-﻿using TarefasApp.ViewModels;
-using TarefasApp.ViewModels.Categorias;
+﻿using TarefasApp.ViewModels.Categorias;
 using Xamarin.Forms;
 
 namespace TarefasApp.Views.Categorias
@@ -9,7 +8,7 @@ namespace TarefasApp.Views.Categorias
         public CategoriaListarPage()
         {
             InitializeComponent();
-            BindingContext = new CategoriaViewModel();
+            BindingContext = new CategoriaListarViewModel();
         }
     }
 }
