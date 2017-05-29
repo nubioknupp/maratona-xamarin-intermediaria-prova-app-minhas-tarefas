@@ -25,11 +25,11 @@ namespace TarefasApp.ViewModels.Categorias
             //SaveCommand = new Command(ExecuteSaveCommandAsync, CanExecute);
         }
 
-        //private void ExecuteSaveCommandAsync()
-        //{
-        //    _categoria = Categoria;
-        //    CanExecute();
-        //}
+        private void ExecuteSaveCommandAsync()
+        {
+            _categoria = Categoria;
+            //CanExecute();
+        }
 
         //private bool CanExecute()
         //{

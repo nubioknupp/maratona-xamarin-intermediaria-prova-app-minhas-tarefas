@@ -29,6 +29,7 @@
             <Button Text="Entrar com o Facebook"
                     BackgroundColor="#4C69BA"
                     TextColor="White"
+                    Command="{Binding LoginCommand}"
                     VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </Grid>

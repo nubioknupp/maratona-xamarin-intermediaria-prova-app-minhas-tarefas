@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using TarefasApp.ViewModels.Login;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TarefasApp.Views.Login
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
+    //[XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
         public LoginPage()
         {
             InitializeComponent();
+
+            BindingContext = new LoginViewModel();
         }
     }
 }

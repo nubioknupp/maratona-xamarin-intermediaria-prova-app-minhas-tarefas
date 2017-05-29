@@ -1,6 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using TarefasApp.Services;
+using Xamarin.Forms;
 
 namespace TarefasApp.ViewModels.Bases
 {
@@ -21,5 +27,32 @@ namespace TarefasApp.ViewModels.Bases
             OnPropertyChanged(propertyName);
             return true;
         }
+
+        public async Task PushAsync<TViewModel>(string folder, params object[] args) where TViewModel : BaseViewModel
+        {
+            var viewModelType = typeof(TViewModel);
+            var viewModelTypeName = viewModelType.Name;
+            var viewModelWordLength = "ViewModel".Length;
+            var viewTypeName = $"TarefasApp.Views.{folder}.{viewModelTypeName.Substring(0, viewModelTypeName.Length - viewModelWordLength)}Page";
+            var viewType = Type.GetType(viewTypeName);
+
+            var page = Activator.CreateInstance(viewType) as Page;
+
+            if (viewModelType.GetTypeInfo().DeclaredConstructors
+                .Any(c => c.GetParameters().Any(p => p.ParameterType == typeof(ITarefasAppService))))
+            {
+                var argsList = args.ToList();
+                var service = DependencyService.Get<ITarefasAppService>();
+                argsList.Insert(0, service);
+                args = argsList.ToArray();
+            }
+
+            var viewModel = Activator.CreateInstance(viewModelType, args);
+            if (page != null)
+                page.BindingContext = viewModel;
+
+            await Application.Current.MainPage.Navigation.PushAsync(page);
+        }
+
     }
 }

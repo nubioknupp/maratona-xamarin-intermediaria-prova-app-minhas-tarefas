@@ -1,4 +1,6 @@
-﻿using TarefasApp.Views.Login;
+﻿using TarefasApp.Helpers;
+using TarefasApp.Views.Categorias;
+using TarefasApp.Views.Login;
 using Xamarin.Forms;
 
 namespace TarefasApp
@@ -9,10 +11,17 @@ namespace TarefasApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage())
+            MainPage = new NavigationPage(GetPage())
             {
                 BarBackgroundColor = Color.Orange
             };
+        }
+
+        private Page GetPage()
+        {
+            if (Settings.IsLogged) return new CategoriaListarPage();
+
+            return new LoginPage();
         }
 
         protected override void OnStart()
