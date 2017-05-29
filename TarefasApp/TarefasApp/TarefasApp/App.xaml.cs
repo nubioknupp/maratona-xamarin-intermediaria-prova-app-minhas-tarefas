@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TarefasApp.Views.Categorias;
+﻿using TarefasApp.Views.Login;
 using Xamarin.Forms;
 
 namespace TarefasApp
@@ -13,7 +9,7 @@ namespace TarefasApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new CategoriaListarPage())
+            MainPage = new NavigationPage(new LoginPage())
             {
                 BarBackgroundColor = Color.Orange
             };

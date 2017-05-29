@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TarefasApp.Views.Login.LoginPage"
+             Title="Login">
+
+    <Grid ColumnSpacing="0"
+          RowSpacing="0"
+          HorizontalOptions="FillAndExpand" BackgroundColor="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout HorizontalOptions="FillAndExpand" HeightRequest="Infinity"
+                     Grid.Column="0" Grid.Row="0">
+            <Label Text="TarefasApp" FontSize="Large" FontAttributes="Bold"
+                   VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Image VerticalOptions="Center" HorizontalOptions="Center" Source="logo.png" />
+        </StackLayout>
+
+        <StackLayout HorizontalOptions="FillAndExpand"
+                     Grid.Column="0" Grid.Row="1">
+            <Button Text="Entrar com o Facebook"
+                    BackgroundColor="#4C69BA"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
