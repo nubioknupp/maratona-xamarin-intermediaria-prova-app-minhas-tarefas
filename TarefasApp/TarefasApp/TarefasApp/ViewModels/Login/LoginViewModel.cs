@@ -14,11 +14,11 @@ namespace TarefasApp.ViewModels.Login
         public LoginViewModel()
         {
             LoginCommand = new Command(ExecuteLoginCommand);
-            _azureService = DependencyService.Get<AzureService>();
+            _azureService = DependencyService.Get<AzureServiceSocialLogin>();
         }
 
         public Command LoginCommand { get; }
-        private readonly AzureService _azureService;
+        private readonly AzureServiceSocialLogin _azureService;
 
         private async void ExecuteLoginCommand(object obj)
         {
