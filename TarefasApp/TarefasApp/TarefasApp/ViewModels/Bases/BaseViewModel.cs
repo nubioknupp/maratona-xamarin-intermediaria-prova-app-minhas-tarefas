@@ -14,6 +14,13 @@ namespace TarefasApp.ViewModels.Bases
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+		private string _title;
+		public string Title
+		{
+			get { return _title; }
+			set { SetProperty(ref _title, value); }
+		}
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -53,6 +60,11 @@ namespace TarefasApp.ViewModels.Bases
 
             await Application.Current.MainPage.Navigation.PushAsync(page);
         }
+
+		public virtual Task LoadAsync()
+		{
+			return Task.FromResult(0);
+		}
 
     }
 }

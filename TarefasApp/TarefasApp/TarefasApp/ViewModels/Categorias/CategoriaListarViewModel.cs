@@ -1,39 +1,37 @@
-﻿using TarefasApp.Models;
+﻿using System.Collections.ObjectModel;
 using TarefasApp.ViewModels.Bases;
+using System.Threading.Tasks;
+using TarefasApp.Helpers;
+using TarefasApp.Models;
+using TarefasApp.Services;
 using Xamarin.Forms;
 
 namespace TarefasApp.ViewModels.Categorias
 {
     public class CategoriaListarViewModel : BaseViewModel
     {
-        private Categoria _categoria;
-
-        public Categoria Categoria
-        {
-            get { return _categoria; }
-            set
-            {
-                SetProperty(ref _categoria, value);
-            }
-        }
-
-        public Command SaveCommand { get; }
+        private readonly ITarefasAppService _tarefasAppService;
+        public ObservableCollection<Categoria> Categorias { get; }
 
         public CategoriaListarViewModel()
         {
-            _categoria = new Categoria{ Descricao = "Teste1"};
-            //SaveCommand = new Command(ExecuteSaveCommandAsync, CanExecute);
+            _tarefasAppService = DependencyService.Get<ITarefasAppService>();
+            Categorias = new ObservableCollection<Categoria>();
+
+            Title = "Categorias"; 
+
         }
 
-        private void ExecuteSaveCommandAsync()
+        public override async Task LoadAsync()
         {
-            _categoria = Categoria;
-            //CanExecute();
-        }
+            var categorias = await _tarefasAppService.BuscarCategoriasPorUsuarioAsync(Settings.UserId);
 
-        //private bool CanExecute()
-        //{
-        //    return true;
-        //}
+            Categorias.Clear();
+
+            foreach (var item in categorias)
+            {
+                Categorias.Add(item);
+            }
+        }
     }
 }

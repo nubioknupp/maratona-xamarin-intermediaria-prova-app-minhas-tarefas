@@ -43,7 +43,7 @@
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Tarefa.cs" />
     <Compile Include="Models\Usuario.cs" />
-    <Compile Include="Services\AzureService.cs" />
+    <Compile Include="Services\AzureServiceSocialLogin.cs" />
     <Compile Include="Services\ITarefasAppService.cs" />
     <Compile Include="ViewModels\Bases\BaseViewModel.cs" />
     <Compile Include="ViewModels\Categorias\CategoriaListarViewModel.cs" />
@@ -58,6 +58,8 @@
     <Compile Include="Views\Login\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\TarefasAppService.cs" />
+    <Compile Include="Views\Bases\BasePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Categorias\CategoriaListarPage.xaml">
@@ -71,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Tarefas\" />
+    <Folder Include="Views\Bases\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Categorias\CategoriaAdicionarPage.xaml">

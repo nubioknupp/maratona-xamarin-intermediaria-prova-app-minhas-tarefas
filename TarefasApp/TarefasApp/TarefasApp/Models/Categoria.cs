@@ -2,8 +2,10 @@
 {
     public class Categoria
     {
-        public object CategoriaId { get; set; }
+        public string CategoriaId { get; set; }
 
-        public string Descricao { get; set; }
+		public string Nome { get; set; }
+
+        public string UsuarioId { get; set; }
     }
 }
