@@ -1,15 +1,18 @@
 ﻿using System.ComponentModel;
+using TarefasApp.Services;
 using TarefasApp.ViewModels.Categorias;
 using Xamarin.Forms;
 
 namespace TarefasApp.Views.Categorias
 {
-    public partial class CategoriaListarPage : ContentPage
+    public partial class CategoriaListarPage 
     {
         private CategoriaListarViewModel ViewModel => BindingContext as CategoriaListarViewModel;
         public CategoriaListarPage()
         {
             InitializeComponent();
+            var tarefasAppService = DependencyService.Get<ITarefasAppService>();
+            BindingContext = new CategoriaListarViewModel(tarefasAppService);
         }
 
         protected override async void OnAppearing()

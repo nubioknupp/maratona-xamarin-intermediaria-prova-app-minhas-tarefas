@@ -31,9 +31,6 @@ namespace TarefasApp.REST.ClienteAPI.Controllers
         [Route("buscar/usuarios/{usuarioId}")]
         public HttpResponseMessage GetObterPorCategoria(Guid usuarioId)
         {
-            if (usuarioId == null)
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
-
             var result = _categoriaRepository.ObterPorUsuario(usuarioId);
             return Request.CreateResponse(HttpStatusCode.OK, result);
         }

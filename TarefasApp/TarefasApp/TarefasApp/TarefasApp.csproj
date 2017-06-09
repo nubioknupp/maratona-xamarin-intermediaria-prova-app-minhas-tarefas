@@ -73,7 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Tarefas\" />
-    <Folder Include="Views\Bases\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Categorias\CategoriaAdicionarPage.xaml">

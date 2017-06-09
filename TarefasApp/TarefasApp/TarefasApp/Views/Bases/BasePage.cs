@@ -1,9 +1,8 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using TarefasApp.ViewModels.Bases;
 using Xamarin.Forms;
 
-namespace TarefasApp
+namespace TarefasApp.Views.Bases
 {
     public abstract class BasePage : ContentPage
     {

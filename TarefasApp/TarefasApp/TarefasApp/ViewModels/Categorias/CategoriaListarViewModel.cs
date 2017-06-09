@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using TarefasApp.ViewModels.Bases;
 using System.Threading.Tasks;
 using TarefasApp.Helpers;
@@ -13,13 +14,12 @@ namespace TarefasApp.ViewModels.Categorias
         private readonly ITarefasAppService _tarefasAppService;
         public ObservableCollection<Categoria> Categorias { get; }
 
-        public CategoriaListarViewModel()
+        public CategoriaListarViewModel(ITarefasAppService tarefasAppService)
         {
-            _tarefasAppService = DependencyService.Get<ITarefasAppService>();
+            _tarefasAppService = tarefasAppService;
             Categorias = new ObservableCollection<Categoria>();
 
             Title = "Categorias"; 
-
         }
 
         public override async Task LoadAsync()

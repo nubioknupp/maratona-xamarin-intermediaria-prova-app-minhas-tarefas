@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
+<base:BasePage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:TarefasApp.Views.Bases;assembly=TarefasApp"
     x:Class="TarefasApp.Views.Categorias.CategoriaListarPage">
 
-    <StackLayout >
-        <Entry Text="Binding Categoria.Descricao"/>
-    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding SearchCommand}" />
+    </ContentPage.ToolbarItems>
 
-    
-</ContentPage>
+    <ListView
+        HasUnevenRows="true"
+        SeparatorVisibility="None" 
+        ItemsSource="{Binding Categorias}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame Padding="0">
+                        <StackLayout Orientation="Vertical">
+
+                            <Label Text="{Binding Nome}"
+                                   Margin="20, 10, 20, 0"
+                                   FontAttributes="Bold" 
+                                   FontSize="Medium" />
+                        </StackLayout>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+</base:BasePage>

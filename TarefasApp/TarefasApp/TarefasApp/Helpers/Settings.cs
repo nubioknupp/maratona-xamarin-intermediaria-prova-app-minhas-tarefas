@@ -16,7 +16,7 @@ namespace TarefasApp.Helpers
 
         public static string UserId
         {
-            get { return AppSettings.GetValueOrDefault(UserIdKey, UserIdDefault); }
+            get { return AppSettings.GetValueOrDefault(UserIdKey, UserIdDefault).Replace("sid:", ""); }
             set { AppSettings.AddOrUpdateValue(UserIdKey, value); }
         }
 

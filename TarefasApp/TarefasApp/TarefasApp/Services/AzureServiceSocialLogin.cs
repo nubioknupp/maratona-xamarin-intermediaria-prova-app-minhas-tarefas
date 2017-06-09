@@ -50,7 +50,7 @@ namespace TarefasApp.Services
             }
 
             Settings.AuthToken = user.MobileServiceAuthenticationToken;
-            Settings.UserId = user.UserId;
+            Settings.UserId = user.UserId.Replace("sid:", "");
 
             return true;
         }
